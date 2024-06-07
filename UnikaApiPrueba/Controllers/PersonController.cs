@@ -40,7 +40,7 @@ namespace UnikaApiPrueba.Controllers
 
         }
         [HttpGet("List")]
-        public async Task<ActionResult<IEnumerable<Person>>> GetList([FromQuery] int limit = 10, [FromQuery] int offset = 0)
+        public async Task<ActionResult<IEnumerable<Person>>> List([FromQuery] int limit = 10, [FromQuery] int offset = 0)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace UnikaApiPrueba.Controllers
 
   
         [HttpPut("Update")]
-        public async Task<IActionResult> UpdatePerson([FromBody] PersonUpdateDto person)
+        public async Task<IActionResult> Update([FromBody] PersonUpdateDto person)
         {
             try
             {
@@ -98,7 +98,7 @@ namespace UnikaApiPrueba.Controllers
         }
 
         [HttpPut("Delete")]
-        public async Task<IActionResult> DeletePerson([FromQuery] int Id)
+        public async Task<IActionResult> Delete([FromQuery] int Id)
         {
 
             try
