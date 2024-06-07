@@ -46,6 +46,7 @@ namespace UnikaApiPrueba.Controllers
             {
                 var totalRecords = await _context.Persons.CountAsync();
                 var persons = await _context.Persons
+                                            .Where(x => x.DeleteDate == null)
                                             .Skip(offset)
                                             .Take(limit)
                                             .ToListAsync();
